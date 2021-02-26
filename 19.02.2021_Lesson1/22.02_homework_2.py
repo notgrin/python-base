@@ -25,3 +25,5 @@ while numbers[zero] != 0:
     print('Сумма чисел от числа', user_number, 'равняется :', sum_of_digits(user_number))
     zero += 1
     continue
+
+
