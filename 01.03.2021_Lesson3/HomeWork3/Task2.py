@@ -29,7 +29,10 @@ def num_translate_adv(english_word):
     if english_word != english_word.lower():
         separated_letter = [element.lower() for element in english_word]
         word_key = numbers_in_letters.get(''.join(separated_letter))
-        print(word_key.capitalize())
+        if numbers_in_letters.get(word_key) is not None:
+            print('None')
+        else:
+            print(word_key.capitalize())
     else:
         print(numbers_in_letters.get(english_word))
 
