@@ -28,11 +28,12 @@ inserted_english_word = input('Введите число от 0 до 10: ')
 def num_translate_adv(english_word):
     if english_word != english_word.lower():
         separated_letter = [element.lower() for element in english_word]
-        word_key = numbers_in_letters.get(''.join(separated_letter))
-        if numbers_in_letters.get(word_key) is not None:
-            print('None')
+        word_key = ''.join(separated_letter)
+        if word_key in numbers_in_letters:
+            new_word = numbers_in_letters.get(word_key)
+            print(new_word.capitalize())
         else:
-            print(word_key.capitalize())
+            print('None')
     else:
         print(numbers_in_letters.get(english_word))
 
