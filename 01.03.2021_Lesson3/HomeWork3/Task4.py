@@ -45,4 +45,3 @@ def thesaurus_adv():
 
 
 thesaurus_adv()
-
