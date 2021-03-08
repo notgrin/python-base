@@ -31,4 +31,3 @@ def num_translate(english_word):
 
 
 num_translate(inserted_english_word)
-1
