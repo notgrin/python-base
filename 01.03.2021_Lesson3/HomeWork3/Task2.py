@@ -38,4 +38,3 @@ def num_translate_adv(english_word):
 
 
 num_translate_adv(inserted_english_word)
-
