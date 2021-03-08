@@ -24,14 +24,14 @@ def thesaurus():
     names.pop()
     print(names)
 
-    name_list = {}
+    name_dict = {}
     for name in names:
-        name_list.setdefault(name[0], [])
-        name_list[name[0]].append({name})
+        name_dict.setdefault(name[0], [])
+        name_dict[name[0]].append({name})
 
-    # print(name_list)
+    # print(name_dict)
     import pprint
-    pprint.pprint(name_list)
+    pprint.pprint(name_dict)
 
 
 thesaurus()
