@@ -27,8 +27,7 @@ inserted_english_word = input('Введите число от 0 до 10: ')
 
 def num_translate_adv(english_word):
     if english_word != english_word.lower():
-        separated_letter = [element.lower() for element in english_word]
-        word_key = ''.join(separated_letter)
+        word_key = english_word.lower()
         if word_key in numbers_in_letters.keys():
             new_word = numbers_in_letters.get(word_key)
             print(new_word.capitalize())
