@@ -13,6 +13,7 @@ http://www.cbr.ru/scripts/XML_daily.asp
 Рекомендация: выполнить предварительно запрос к этой странице в обычном браузере, посмотреть содержимое ответа.
 """
 
+
 import requests
 import requests.utils as utils
 
@@ -28,8 +29,14 @@ def get_currency_rate(*args):
         end = content[start:].find('</Value>')
         currency = content[start: (start+end)]
         first_part = currency[:3]
-        second_part = currency[-7:]
-        print(f'{first_part}: {second_part} руб')
+        second_part = currency[-4:]
+        main_part = currency[-8: -4]
+        x = []
+        for number in main_part:
+            if number.isdigit():
+                x.extend(number)
+        full_part = ''.join(x)
+        print(f'{first_part}: {int(full_part)},{int(second_part)} руб')
 
 
 get_currency_rate('USD', 'EUR', 'AUD', 'GBP')
