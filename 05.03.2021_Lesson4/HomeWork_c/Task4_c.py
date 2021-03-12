@@ -12,7 +12,9 @@ USD 75.18, 2020-09-05
 EUR 80.35, 2020-09-05
 """
 
-import utils_task4
+from utils import get_currency_rate
 
 
-utils_task4.get_currency_rate('USD', 'GBP', 'EUR', 'AUD')
+for currency in ['USD', 'eur', 'CAD']:
+    currency_rate, course_date = get_currency_rate(currency)
+    print(currency.upper(), currency_rate, course_date)
