@@ -10,3 +10,9 @@ USD 75.18, 2020-09-05
 EUR 80.35, 2020-09-05
 """
 
+import sys
+import utils_task4
+
+currencies = sys.argv[1:]
+for currency in currencies:
+    utils_task4.get_currency_rate(currency)
