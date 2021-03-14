@@ -26,8 +26,7 @@ def rand_nums(limit):
 
 rand15 = rand_nums(15)
 
-for i in enumerate(rand15, start=1):
-    print(i[0], i[1])
-    # print(i) если выводить так, то значение выводится в скобках, например (1, 17)
+for i, val in enumerate(rand15, start=1):
+    print(i, val)
 
 # В rand_nums надо передать 20 и больше значений
