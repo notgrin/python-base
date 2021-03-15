@@ -19,14 +19,15 @@ import random
 def rand_nums(limit):
     while limit != 0:
         number = random.randint(1, 100)
-        if number % 2 == 1:
-            yield number
-            limit -= 1
+        yield number
+        limit -= 1
 
 
-rand15 = rand_nums(15)
+rand15 = (i for i in rand_nums(15) if i % 2 == 1)
 
 for i, val in enumerate(rand15, start=1):
     print(i, val)
 
-# В rand_nums надо передать 20 и больше значений
+# В rand_nums надо передать (нет точного числа,
+# т.к. все упирается в теорию вероятности, даже в 1000 значений
+# может не быть ни одного из тех, что нам нужно.
