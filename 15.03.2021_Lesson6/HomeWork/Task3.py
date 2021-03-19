@@ -17,16 +17,34 @@
 скалолазание,охота
 горные лыжи
 """
+with open('users.csv', 'w', encoding='utf8') as u:
+    print('Иванов,Иван,Иванович\nПетров,Петр,Петрович\nМаксимов,Илья,Владимирович\nЩепкин,Костя,Андреев', file=u)
+with open('hobby.csv', 'w', encoding='utf8') as h:
+    print('скалолазание, охота\nгорные лыжи\nрыбалка\nрыбалка\nрыбалка\nрыбалка\nрыбалка\nрыбалка', file=h)
+
+
+data_base = {}
 with open('users.csv', 'r', encoding='utf8') as users:
     for user in users:
         user = user.strip()
         user = user.replace(',', ' ')
-        print(user)
+        data_base.setdefault(user)
 
+hobby_list = []
+count = 0
 with open('hobby.csv', 'r', encoding='utf8') as hobbies:
     for hobby in hobbies:
         hobby = hobby.strip()
-        print(hobby)
+        hobby_list.append(hobby)
 
-data_base = {}
-data_base.setdefault(user)
+if len(hobby_list) < len(data_base.keys()):
+    hobby_list.append(None)
+else:
+    exit(1)
+
+while count < len(data_base.keys()):
+    for i in data_base.keys():
+        data_base[i] = hobby_list[count]
+        count += 1
+
+print(data_base)
