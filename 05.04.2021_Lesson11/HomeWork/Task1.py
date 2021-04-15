@@ -52,4 +52,3 @@ for date in dates:
         print(dt)
     except ValueError as e:
         print(f'Неверный формат - {e}: [{date}]')
-
